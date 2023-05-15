@@ -1,0 +1,45 @@
+# Lab2
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int n = 10;
+        int[] a = new int[n];
+
+        
+        Random rnd = new Random();
+        for (int i = 0; i < n; i++)
+        {
+            a[i] = rnd.Next(-100, 101);
+            Console.Write(a[i] + " ");
+        }
+        Console.WriteLine();
+
+        int maxAbsIdx = 0;
+        for (int i = 1; i < n; i++)
+        {
+            if (Math.Abs(a[i]) > Math.Abs(a[maxAbsIdx]))
+            {
+                maxAbsIdx = i;
+            }
+        }
+        Console.WriteLine("Номер максимального за модулем елемента: " + maxAbsIdx);
+
+        int prod = 1;
+        bool foundPositive = false;
+        for (int i = 0; i < n; i++)
+        {
+            if (foundPositive)
+            {
+                prod *= a[i];
+            }
+            else if (a[i] > 0)
+            {
+                foundPositive = true;
+            }
+        }
+        Console.WriteLine("Добуток елементів масиву, розташованих після першого додатного елемента: " + prod);
+    }
+}
