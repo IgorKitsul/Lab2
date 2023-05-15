@@ -1,0 +1,26 @@
+# Lab2
+using System;
+namespace ConsoleApp15
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n;
+            Console.Write("Введiть номер мiсяця ");
+            n = Convert.ToInt32(Console.ReadLine());
+            {
+                if ((n == 12) || (n <= 2)) Console.Write("Зима");
+
+                else if ((n >= 3) && (n <= 5)) Console.Write("Весна");
+
+                else if ((n >= 6) && (n <= 8)) Console.Write("Лiто");
+
+                else if ((n >= 9) && (n <= 11)) Console.Write("Ociнь");
+                else Console.WriteLine("Некоректний ввiд даних");
+
+
+            }
+        }
+    }
+}
